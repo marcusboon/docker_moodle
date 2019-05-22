@@ -3,11 +3,13 @@ version: '3'
 services:
   mahara:
     build: ./mahara
+    container_name: mahara
     ports:
       - "80:80"
     volumes:
       - ./siteroot:/siteroot
   mahara-db:
+    container_name: maharadb
     image: postgres
     restart: always
     environment:
