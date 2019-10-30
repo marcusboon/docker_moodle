@@ -11,10 +11,10 @@
 git clone git@github.com:kenneth-hendricks/docker_moodle.git docker_moodle
 ```
 
-2. Clone Moodle code into siteroot
+2. Clone Moodle code into site
 ```
 cd docker_moodle
-git clone git@github.com:moodle/moodle.git siteroot
+git clone git@github.com:moodle/moodle.git site
 ```
 
 3. Copy site config across
