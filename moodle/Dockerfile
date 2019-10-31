@@ -23,7 +23,8 @@ RUN locale-gen en_AU.UTF-8
 
 RUN cd /usr/local/lib/ && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 
-RUN mkdir /siteroot
+RUN mkdir /var/www
+RUN mkdir /var/www/site
 
 RUN mkdir /var/lib/sitedata && chmod 0777 /var/lib/sitedata
 RUN mkdir /var/lib/testsitedata && chmod 0777 /var/lib/testsitedata
