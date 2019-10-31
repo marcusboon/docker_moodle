@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./siteroot:/siteroot
+      - ./site:/var/www/site
   moodle-db:
     image: postgres
     restart: always
@@ -14,7 +14,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: moodle
       POSTGRES_USER: moodle_user
-    volumes: 
+    volumes:
       - 'moodledb:/var/lib/postgresql'
   moodle-test-db:
     image: postgres
@@ -23,7 +23,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: moodle
       POSTGRES_USER: moodle_user
-    volumes: 
+    volumes:
       - 'moodletestdb:/var/lib/postgresql'
 volumes:
     moodledb:
