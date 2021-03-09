@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -34,7 +34,9 @@ COPY nginx-site.conf /etc/nginx/sites-available/default
 RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY 99-xdebug.ini /etc/php/7.2/mods-available/xdebug.ini
-COPY php.ini /etc/php/7.2/fpm/php.ini
+COPY 99-xdebug.ini /etc/php/7.4/mods-available/xdebug.ini
+COPY php.ini /etc/php/7.4/fpm/php.ini
 
-CMD service php7.2-fpm start && nginx
+COPY moodle-cron /etc/cron.d/moodle-cron
+
+CMD service php7.4-fpm start && nginx
