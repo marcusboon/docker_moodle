@@ -62,10 +62,10 @@ docker-compose up
 * Add common utility commands
 
 ## Utility Commands
-Use the following command to enter the bash shell of each container. 
-Replaces using the docker exec function. 
+Use the following command to enter the bash shell of each container.
+Replaces using the docker exec function.
 
-To change container names, change name in yaml file and control file. 
+To change container names, change name in yaml file and control file.
 
 Enter web container:
 ```
@@ -78,4 +78,8 @@ Enter db container:
 Enter test database container:
 ```
 ./control testdb
+```
+Enter integration database container:
+```
+./control intdb
 ```

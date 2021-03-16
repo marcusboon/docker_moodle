@@ -25,6 +25,16 @@ services:
       POSTGRES_USER: moodle_user
     volumes:
       - 'moodletestdb:/var/lib/postgresql'
+  moodle-int-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dev_integration
+      POSTGRES_USER: dev_integration
+    volumes:
+     - 'moodleintdb:/var/lib/postgresql'
 volumes:
     moodledb:
     moodletestdb:
+    moodleintdb:

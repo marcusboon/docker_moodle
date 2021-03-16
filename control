@@ -8,6 +8,7 @@ cd $DIR;
 webcont="$(docker-compose ps -q moodle)"
 dbcont="$(docker-compose ps -q moodle-db)"
 dbtestcont="$(docker-compose ps -q moodle-test-db)"
+dbintcont="$(docker-compose ps -q moodle-int-db)"
 
 for ARG in $*
     do
@@ -18,6 +19,10 @@ for ARG in $*
             ;;
             db)
             docker exec -ti $dbcont bash
+            exit
+            ;;
+            intdb)
+            docker exec -ti $dbintcont bash
             exit
             ;;
             testdb)
